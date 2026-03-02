@@ -1,0 +1,35 @@
+name: micronsbinder_03
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+
+  # core scientific stack
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+
+  # utilities
+  - tqdm
+
+  # plotting
+  - plotly
+
+  # common helpers (safe to include)
+  - ipython
+
+  # if you read/write large tables often, these help (optional but useful)
+  - pyarrow
+  - fastparquet
+
+  # if you use notebooks (optional)
+  - jupyterlab
+
+  - pip:
+      # MICrONS / CAVE ecosystem (most often pip)
+      - caveclient
+      - meshparty
+      - microns-datacleaner
