@@ -9,20 +9,20 @@ This repository provides practical notebooks for accessing the MICrONS([Microns 
 
 ## Repository Map
 ### Start here
-- [`00_quickstart.ipynb`](00_quickstart.ipynb) — Minimal end-to-end run to verify setup and MICrONS data access.
+- [`00_quickstart.ipynb`](notebooks/00_quickstart.ipynb) — Minimal end-to-end run to verify setup and MICrONS data access.
 
 
 ### Data access
-- [`01_data_query_and_save.ipynb`](01_data_query_and_save.ipynb) — Query MICrONS tables and save local, analysis-ready files.
+- [`01_data_query_and_save.ipynb`](notebooks/01_data_query_and_save.ipynb) — Query MICrONS tables and save local, analysis-ready files.
 
 ### Preprocessing + synapse→dendrite assignment
-- [`02_preprocessing_assignment.ipynb`](02_preprocessing_assignment.ipynb) — Clean tables and assign synapses to dendritic structure (e.g., distance-to-soma / compartments).
+- [`02_preprocessing_assignment.ipynb`](notebooks/02_preprocessing_assignment.ipynb) — Clean tables and assign synapses to dendritic structure (e.g., distance-to-soma / compartments).
 
 ### Analyses
-- [`03_analysis_basal_apical.ipynb`](03_analysis_basal_apical.ipynb) — Core dendrite-centric analyses (basal vs apical comparisons).
-- [`03_Stat_input_vs_distance.ipynb`](03_Stat_input_vs_distance.ipynb) — Summary statistics vs distance-to-soma (binned trends).
-- [`04_inhibitory_analysis.ipynb`](04_inhibitory_analysis.ipynb) — Variant of the pipeline focused on inhibitory neurons.
+- [`03_analysis_basal_apical.ipynb`](notebooks/03_analysis_basal_apical.ipynb) — Core dendrite-centric analyses (basal vs apical comparisons).
+- [`03_Stat_input_vs_distance.ipynb`](notebooks/03_Stat_input_vs_distance.ipynb) — Summary statistics vs distance-to-soma (binned trends).
+- [`04_inhibitory_analysis.ipynb`](notebooks/04_inhibitory_analysis.ipynb) — Variant of the pipeline focused on inhibitory neurons.
 
 ### 3D visualization
-- [`05_Skeleton_Mesh_Tutorial.ipynb`](05_Skeleton_Mesh_Tutorial.ipynb) — Skeleton/mesh rendering tutorial for qualitative inspection.
-- [`06_3D_video_skeletons.ipynb`](06_3D_video_skeletons.ipynb) — Export rotating 3D videos from skeletons/meshes.
+- [`05_Skeleton_Mesh_Tutorial.ipynb`](notebooks/05_Skeleton_Mesh_Tutorial.ipynb) — Skeleton/mesh rendering tutorial for qualitative inspection.
+- [`06_3D_video_skeletons.ipynb`](notebooks/06_3D_video_skeletons.ipynb) — Export rotating 3D videos from skeletons/meshes.
