@@ -19,44 +19,33 @@ This repository provides practical notebooks for accessing the MICrONS([Microns 
 <summary><b>00_quickstart example outputs (click to expand)</b></summary>
 <br>
 
-**(1) Postsynaptic neuron skeleton (2D projection).**  
-Black: skeleton nodes. Red: soma.
+**(1) Skeleton nodes in coordinate space (2D projection).**  
+Grey: skeleton nodes. Red: soma.
+<p align="left"><img src="docs/figures/skeleton_xy.png" width="35%"></p>
 
-<p align="center">
-  <img src=>
+**(2) All synapses (pre) in coordinate space.**  
+Plotting synapses of a chosen neuron.
+Black: synapses, Red: soma
+<p align="left"><img src="docs/figures/synapse_xy.png" width="35%"></p>
 
+**(3) All synapses (pre) with preferred orientation in coordinate space.**  
+Grey: All synapses, Colored: synapses with preferred orientation
+<p align="left"><img src="docs/figures/neuron_synapses_function.png" width="35%"></p>
 
+**(4) Dendrite grouping.**  
+Branch order: Node depth from the soma along the tree, used to quantify branching hierarchy.<br>
+Dendrites: Grouping of nodes into major dendritic trees for compartment-level comparisons.<br>
+Segments: Fine partition of the skeleton into contiguous branch segments for per-branch analysis and labeling.<br>
+<div style="display:flex; justify-content:space-between; gap:12px;">
+  <img src="docs/figures/dendrites_2d.png" width="32%">
+  <img src="docs/figures/branch_order_2d.png" width="32%">
+  <img src="docs/figures/segments_2d.png" width="32%">
+</div>
 
-
-
-
-
-- [`00_quickstart.ipynb`](notebooks/00_quickstart.ipynb) — Minimal end-to-end run to verify setup and MICrONS data access.
-Here you can have a look at tables, synapses, and neuron's properties.
-This quickstart demonstrates the visualization of synapses and skeletons on a 2D plane. Example 23 layer pyramidal neuron's synapse and skeleton examples are below.
-Mind you that it seems synapses only captures dendrites because we can query either presynapse or postsynapses given a single post neuron, and we chose presyapses.
-On the other hand, skeleton includes the entire structure of a neuron as you can see, you can see dendrites and axons.
-[insert pic 1]
-[insert pic 2]
-
-Next, using a dendritic skeleton sorting algorithms (src/dendrites.py),  we can classify dendrite nodes into three different orders.
-[insert pic 3]
-[insert pic 4]
-[insert pic 5]
-
-Lastly, we can plot each skeleton's node and color them in regards to their distance to soma.
-[insert pic 6]
-
-
-
-
-
-
-
-## Under construction
-
-### Data access
-- [`01_data_query_and_save.ipynb`](notebooks/01_data_query_and_save.ipynb) — Query MICrONS tables and save local, analysis-ready files.
+**(5) Distance to soma.**  
+Each node colored by Euclidean distance from the soma (µm), used for distance-binned synapse analyses.
+<p align="left"><img src="docs/figures/soma_dist_xy_2d.png" width="37%"></p>
+</details>
 
 ### Preprocessing + synapse→dendrite assignment
 - [`02_preprocessing_assignment.ipynb`](notebooks/02_preprocessing_assignment.ipynb) — Clean tables and assign synapses to dendritic structure (e.g., distance-to-soma / compartments).
