@@ -16,7 +16,7 @@ This repository provides practical notebooks for accessing the MICrONS([Microns 
 - **Output:** example plots below
 
 <details>
-<summary><b>00_quickstart example outputs (click to expand)</b></summary>
+<summary><b>Example outputs (click to expand)</b></summary>
 <br>
 
 **(1) Skeleton nodes in coordinate space (2D projection).**  
@@ -50,9 +50,60 @@ Each node colored by Euclidean distance from the soma (µm), used for distance-b
 ### Data query + saving
 - [`01_data_query_and_save.ipynb`](notebooks/01_data_query_and_save.ipynb) - Query MICrONS annotation/functional tables, build neuron ID lists (proofread + non-proofread 23P), and batch-download synapse tables + raw skeleton SWCs for local caching.
 
-
 ### Preprocessing + synapse→dendrite assignment
-- [`02_preprocessing_assignment.ipynb`](notebooks/02_preprocessing_assignment.ipynb) — Clean tables and assign synapses to dendritic structure (e.g., distance-to-soma / compartments).
+- [`02_preprocessing_and_assignment.ipynb`](notebooks/02_preprocessing_and_assignment.ipynb) — Preprocess and annotate synapse tables, then assign synapses to dendritic structure for downstream analyses.
+  - **Does:** loads synapse tables, filters rows, and adds dendrite annotations (e.g., distance-to-soma and skeleton-based labels such as branch/segment groupings).
+  - **Includes:** built-in sanity checks to verify row counts and consistency across intermediate steps.
+  - **Output:** “analysis-ready” synapse tables with dendritic assignment/annotations (saved for use in the analysis notebooks).
+
+<details>
+<summary><b>Example outputs (click to expand)</b></summary>
+
+**(1) Morphology summary across 23P neurons (radius vs node count).**  
+A population-level view of skeleton complexity as a function of radius.
+<p align="left"><img src="docs/figures/02_sholl_like_radius_nodecount.png" width="35%"></p>
+
+**(2) Distribution of branch node counts.**  
+Sanity summary of branch/segment sizes used for dendrite-aware assignment.
+<p align="left"><img src="docs/figures/02_branch_node_counts_hist.png" width="35%"></p>
+
+**(3) Synaptic density summary after assignment.**  
+Relationship between pre-/post-synaptic density features used in later analyses.
+<p align="left"><img src="docs/figures/02_synaptic_density_scatter.png" width="35%"></p>
+
+</details>
+
+### Analyses
+- [`03_analysis_basal_apical.ipynb`](notebooks/03_analysis_basal_apical.ipynb) — Core basal vs apical dendrite analysis using synapse density maps and functional synapse subsets.
+  - **Does:** selects neurons by layers, loads synapse tables, and computes synapse density maps for all synapses and functionally filtered synapses.
+  - **Key outputs:** density maps and difference maps highlighting basal vs apical patterns (saved to the notebook’s output directory).
+
+<details>
+<summary><b>Example outputs (click to expand)</b></summary>
+
+**(1) Difference map (functional - all)**
+Highlights where functional synapses are enriched or depleted relative to the baseline distribution.
+<p align="left"><img src="docs/figures/03_difference_map.png" width="35%"></p>
+
+**(2) Apical Basal input ratio**
+Map input ratio of apical/basal by filtered input layers of a chosen postsynaptic neuron
+ <p align="left"><img src="docs/figures/03_ab_ratio.png" width="35%"></p>
+ </details>
+
+- [`03_Stat_input_vs_distance.ipynb`](notebooks/03_Stat_input_vs_distance.ipynb) — Quantify how synaptic/functional statistics change with distance-to-soma.
+  - **Does:** bins synapses by distance-to-soma and computes trends for synapse size/strength and tuning-related metrics (e.g., |Δ preferred orientation|), including weighted variants and circular-stat summaries.
+  - **Output:** distance-binned trend plots and distribution summaries used to interpret dendritic gradients.
+
+
+
+
+
+
+- [`04_inhibitory_analysis.ipynb`](notebooks/04_inhibitory_analysis.ipynb) — Variant of the pipeline focused on inhibitory neurons.
+
+
+
+
 
 
 
@@ -61,8 +112,6 @@ Each node colored by Euclidean distance from the soma (µm), used for distance-b
 
 
 # ================= UNDER CONSTRUCTION ==========================
-### Preprocessing + synapse→dendrite assignment
-- [`02_preprocessing_assignment.ipynb`](notebooks/02_preprocessing_assignment.ipynb) — Clean tables and assign synapses to dendritic structure (e.g., distance-to-soma / compartments).
 
 ### Analyses
 - [`03_analysis_basal_apical.ipynb`](notebooks/03_analysis_basal_apical.ipynb) — Core dendrite-centric analyses (basal vs apical comparisons).
