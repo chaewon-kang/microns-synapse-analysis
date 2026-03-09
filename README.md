@@ -2,6 +2,8 @@
 
 This repository provides practical notebooks for accessing the MICrONS([Microns Cubic Milimeter data](https://www.microns-explorer.org/cortical-mm3)), and running synapse based analyses that connect anatomy (dendritic skeletons, synapse coordinates, branch structure) with function (neural/synaptic functional properties).
 
+<p align="center"><img src="docs/figures/05_neuron_rotation_pref_ori.gif" width="40%"><br><em>Example 3D rotation: neuron skeleton with synapses colored by preferred orientation.</em></p>
+
 ## What can you do with this?
 1. Querying synapses for selected neurons \
 2. Preprocessing and annotating synapses by dendritic location/compartment \
@@ -91,33 +93,28 @@ Map input ratio of apical/basal by filtered input layers of a chosen postsynapti
  </details>
 
 - [`03_Stat_input_vs_distance.ipynb`](notebooks/03_Stat_input_vs_distance.ipynb) — Quantify how synaptic/functional statistics change with distance-to-soma.
-  - **Does:** bins synapses by distance-to-soma and computes trends for synapse size/strength and tuning-related metrics (e.g., |Δ preferred orientation|), including weighted variants and circular-stat summaries.
-  - **Output:** distance-binned trend plots and distribution summaries used to interpret dendritic gradients.
+  - **Does:** bins synapses by distance to soma and computes trends for synapse size/strength and tuning metrics(preferred orientation), including weighted variants and circular stats summaries.
+  - **Output:** distance binned plots and distribution summaries
 
+- [`04_inhibitory_analysis.ipynb`](notebooks/04_inhibitory_analysis.ipynb) — Analysis on inhibitory presynaptic partners.
+- **Key output:** distribution of peak preferred directions across inhibitory subclasses.
 
-
-
-
-
-- [`04_inhibitory_analysis.ipynb`](notebooks/04_inhibitory_analysis.ipynb) — Variant of the pipeline focused on inhibitory neurons.
-
-
-
-
-
-
-
-
-
-
-
-# ================= UNDER CONSTRUCTION ==========================
-
-### Analyses
-- [`03_analysis_basal_apical.ipynb`](notebooks/03_analysis_basal_apical.ipynb) — Core dendrite-centric analyses (basal vs apical comparisons).
-- [`03_Stat_input_vs_distance.ipynb`](notebooks/03_Stat_input_vs_distance.ipynb) — Summary statistics vs distance-to-soma (binned trends).
-- [`04_inhibitory_analysis.ipynb`](notebooks/04_inhibitory_analysis.ipynb) — Variant of the pipeline focused on inhibitory neurons.
+<details>
+<summary><b>Example outputs (click to expand)</b></summary>
+<p align="left"><img src="docs/figures/04_inhibitory_peak_pref_direction.png" width="35%"><br><em>Distribution of peak preferred directions for inhibitory presynaptic partners, overlaid by inhibitory subclass.</em></p>
+</details>
 
 ### 3D visualization
-- [`05_Skeleton_Mesh_Tutorial.ipynb`](notebooks/05_Skeleton_Mesh_Tutorial.ipynb) — Skeleton/mesh rendering tutorial for qualitative inspection.
-- [`06_3D_video_skeletons.ipynb`](notebooks/06_3D_video_skeletons.ipynb) — Export rotating 3D videos from skeletons/meshes.
+- [`05_3D_video_skeletons.ipynb`](notebooks/05_3D_video_skeletons.ipynb) — Render neurons in 3D and export rotating GIF/MP4 animations from skeletons for qualitative inspection and presentations.
+
+
+## Notes
+- This repo does not include MICrONS raw data or large intermediate files. Generated outputs are expected to be created locally when running the notebooks.
+- MICrONS data access requires appropriate credentials / CAVEclient configuration.
+
+## Acknowledgements
+Data source: MICrONS Cortical MM³ dataset (https://www.microns-explorer.org/).  
+This repository builds on common MICrONS tooling such as `caveclient` and related ecosystem libraries.
+
+## Contact
+If you have questions or want to reuse parts of this pipeline, feel free to open an issue or reach out.
