@@ -2,7 +2,7 @@
 
 This repository provides practical notebooks for accessing the MICrONS([Microns Cubic Milimeter data](https://www.microns-explorer.org/cortical-mm3)), and running synapse based analyses that connect anatomy (dendritic skeletons, synapse coordinates, branch structure) with function (neural/synaptic functional properties).
 
-<p align="center"><img src="docs/figures/05_neuron_rotation_pref_ori.gif" width="40%"><br><em>Example 3D rotation: neuron skeleton with synapses colored by preferred orientation.</em></p>
+<p align="center"><img src="docs/figures/05_neuron_rotation_pref_ori.gif" width="55%"><br><em>Example 3D rotation: neuron skeleton with synapses colored by preferred orientation.</em></p>
 
 ## What can you do with this?
 1. Querying synapses for selected neurons \
